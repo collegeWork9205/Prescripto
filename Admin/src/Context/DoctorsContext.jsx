@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export const DoctorsContext = createContext();
 
 const DoctorsContextProvider = (props) => {
-    const backend_url = import.meta.env.VITE_BACKEND_URL
+    const backend_url = "https://prescripto-backend-kjp6.onrender.com"
     const [dToken, setDToken] = useState(localStorage.getItem('dToken') ? localStorage.getItem('dToken') : '')
     const [appointments, setAppointments] = useState([])
     const navigate = useNavigate();
