@@ -6,7 +6,7 @@ export const AdminContext = createContext();
 
 const AdminContextProvider = (props) => {
     const [aToken, setAToken] = useState(localStorage.getItem('aToken') ? localStorage.getItem('aToken') : '');
-    const backend_Url = import.meta.env.VITE_BACKEND_URL;
+    const backend_Url = "https://prescripto-backend-kjp6.onrender.com";
     const [doctors, setDoctorsList] = useState([])
     const [appointments, setAppointments] = useState([])
 
