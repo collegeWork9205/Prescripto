@@ -36,9 +36,9 @@ const Doctors = () => {
   }, [])
 
   return (
-    <div>
+   <div>
       <p className='text-gray-600 font-serif text-lg'>Browse through the doctors specialist.</p>
-      <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
+      <div className='flex flex-col sm:flex-row items-start gap-5 sm:mt-5'>
         <button className={` flex flex-row  pr-3 pl-1 py-1 border rounded text-sm font-bold transition-all sm:hidden ${showFilters ? "bg-black text-white" : ""}`} onClick={() => setShowFilters(prev => !prev)}><img className='w-4' src={assets.threeLine} alt="" />Filter</button>
         <div className={`flex flex-col gap-4 text-sm text-gray-600 ${showFilters ? "flex" : "hidden sm:flex"}`}>
           <p onClick={() => speciality === 'General physician' ? navigate('/doctors') : navigate('/doctors/General physician')} className={`w-[94vw] sm:w-auto border border-gray-500 pl-3 pr-16 py-1.5 rounded  transition-all cursor-pointer  hover:scale-105 font-serif ${speciality === 'General physician' ? "bg-black text-white" : ""}`} > General physician </p>
@@ -63,15 +63,26 @@ const Doctors = () => {
                   </div>
                 </div>
               ))
-              :
-              state == false ?
+              : state == false ?
                 <>
                   <div></div>
-                  <div className='w-full text-red-500 font-serif mx-4 text-center'>
-                    <p className='md:text-lg flex flex-col justify-center items-center'>There Is Probelm In Network<img className='w-80 max-h-30 my-1' src={assets.broken_img} alt="" /> That's Why Doctors Are Not Shown Please Try Later !!!</p>
+                  <div className='max-sm:hiddden w-full text-red-500 font-serif mx-4 text-center'>
+                    <p className=' max-sm:hidden md:text-lg flex flex-col justify-center items-center'>There Is Probelm In Network<img className='max-sm:hidden w-80 max-h-30 my-1' src={assets.broken_img} alt="" /> That's Why Doctors Are Not Shown Please Try Later !!!</p>
                   </div>
                 </>
                 : ' '
+          }
+        </div>
+        <div className='max-sm:block sm:hidden'>
+          {
+            state == false ?
+              <div className='flex flex-col items-center m-0 text-center'>
+                <div></div>
+                <div className='w-full text-red-500 font-serif mx-4 text-center'>
+                  <p className='md:text-lg flex flex-col justify-center items-center'>There Is Probelm In Network<img className='w-80 max-h-30 my-1' src={assets.broken_img} alt="" /> That's Why Doctors Are Not Shown Please Try Later !!!</p>
+                </div>
+              </div>
+              : ' '
 
           }
         </div>
