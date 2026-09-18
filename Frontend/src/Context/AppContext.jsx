@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
-    const backend_url = import.meta.env.VITE_BACKEND_URL;
+    const backend_url = "https://prescripto-backend-kjp6.onrender.com";
     const crncysymbol = '$';
     const [doctors, setDoctors] = useState([])
     const [token, setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : false)
